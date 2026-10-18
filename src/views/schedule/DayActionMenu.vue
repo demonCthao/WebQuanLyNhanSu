@@ -94,10 +94,10 @@ onBeforeUnmount(() => {
         <div ref="menuRef" role="menu" :aria-label="`Tùy chọn cho ngày ${date}`"
             class="fixed z-50 w-60 rounded-xl border border-secondary-200 bg-white p-1.5 shadow-lg"
             :class="{ invisible: !placed }" :style="{ top: `${position.top}px`, left: `${position.left}px` }">
-            <p class="px-3 pb-1.5 pt-1 text-xs font-semibold text-[var(--color-secondary-500)]">{{ date }}</p>
+            <p class="px-3 pb-1.5 pt-1 text-xs font-semibold text-gray-600">{{ date }}</p>
 
             <button v-for="action in DAY_ACTIONS" :key="action.kind" type="button" role="menuitem"
-                class="flex w-full items-center rounded-lg px-3 py-2 text-left text-[14px] font-medium text-[var(--color-secondary-700)] transition-colors hover:bg-secondary-50 focus:bg-secondary-50 focus:outline-none"
+                class="cursor-pointer flex w-full items-center rounded-lg px-3 py-2 text-left text-[14px] font-medium text-[var(--color-secondary-700)] transition-colors hover:bg-secondary-50 focus:bg-secondary-50 focus:outline-none"
                 @click="emit('select', action.kind)">
                 {{ action.label }}
             </button>
